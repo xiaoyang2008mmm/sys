@@ -1,0 +1,37 @@
+from views.views import *
+from views.ucloud import *
+from views.upload import *
+from views.pzb import *
+import os.path
+
+STATIC_PATH   = os.path.join(os.path.dirname(__file__), "../static")
+TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "../templates")
+HANDLERS =[
+	   (r"/",			Base_Handler),
+	   (r"/uid/",			Uid_Handler),
+	   (r"/uid_info/",		Uid_Info_handler),
+	   (r"/ucloud_uid/",		Ucloud_uid_handler),
+	   (r"/get_liveid_file/",	Get_Liveid_File_handler),
+	   (r"/active_all_file/",	Active_All_File_handler),
+	   (r"/down_all_file/",		Down_All_File_handler),
+	   (r"/merge_all_file/",	Merge_All_File_handler),
+	   (r"/upload_file_ks3/",	Upload_File_Ks3_handler),
+	   (r"/recover_api/",		Recover_Api_handler),
+	]
+
+
+
+
+HANDLERS+=[
+          (r'/upload/',         UPLOAD_HANDLER),
+          (r'/upload_ws/',      UPLOAD_WS_HANDLER),
+        ]
+
+
+
+
+HANDLERS+=[
+          (r'/pzb/',        PZB_HANDLER),
+          (r'/pzb_node/',   PZB_NODE_HANDLER),
+          (r'/edit_node/',  EDIT_NODE_HANDLER),
+        ]
